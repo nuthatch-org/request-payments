@@ -1,0 +1,19 @@
+[nest]
+name = "request-payments"
+chain = "mainnet"
+chain_id = 1
+# A keyless public endpoint, so this file is publishable: `nuthatch.toml` is pinned into the nest's
+# content address and must never carry a credential. It is enough to follow the tip. A *backfill*
+# needs archive depth this endpoint does not have - pass your own with `--rpc`, and check it first
+# with `nuthatch doctor --rpc <url>`.
+rpc_urls = [
+    "https://eth.drpc.org",
+]
+schema_version = 1
+block_timestamps = true
+
+[[contracts]]
+alias = "c0"
+address = "0x370de27fdb7d1ff1e1baa7d11c5820a324cf623c"
+start_block = 10774767
+abi = "abis/c0.json"

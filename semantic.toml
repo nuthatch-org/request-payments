@@ -1,0 +1,37 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `request-payments` nest on mainnet. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.c0__transfer_with_reference_and_fee]
+description = "`TransferWithReferenceAndFee(address,address,uint256,bytes,uint256,address)` events emitted by the `c0` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TransferWithReferenceAndFee(address,address,uint256,bytes,uint256,address) event"
+
+[table.c0__transfer_with_reference_and_fee.columns]
+amount = "The `amount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+feeAddress = "The `feeAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+feeAmount = "The `feeAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+paymentReference_hash = "The `paymentReference_hash` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+to = "The `to` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+tokenAddress = "The `tokenAddress` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.c0__transfer_with_reference_and_fee.footguns]
+reserved_words = ["to"]
+big_ints = [
+    "amount",
+    "feeAmount",
+]
+overflows_dec = [
+    "amount",
+    "feeAmount",
+]
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."

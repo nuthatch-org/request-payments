@@ -1,6 +1,6 @@
 # request-payments
 
-A [nuthatch](https://github.com/nightswatchhq/nuthatch) nest: **Request Network payment proxies on Ethereum**.
+A [nuthatch](https://github.com/nuthatch-org/nuthatch) nest: **Request Network payment proxies on Ethereum**.
 
 Reference-tagged ERC-20 payments with fees.
 
@@ -21,7 +21,7 @@ Indexed blocks **25,711,626 to 25,811,562** and sealed **593 events**. Every tab
 ## Run it
 
 ```sh
-nuthatch init --from https://github.com/nightswatchhq/request-payments
+nuthatch init --from https://github.com/nuthatch-org/request-payments
 cd request-payments
 nuthatch dev --dir . --backfill 50000 --seal-direct
 nuthatch sql --dir . "SELECT count(*) FROM \"c0__transfer_with_reference_and_fee\""
